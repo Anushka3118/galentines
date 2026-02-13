@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Galentine’s 💗</title>
+  <meta name="theme-color" content="#ff5aa5" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- floating hearts -->
+  <div class="hearts" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <header class="hero card">
+      <div class="left">
+        <p class="pill">Happy Galentine’s Day 🎀</p>
+        <h1>To my favourite roommate 💖</h1>
+        <p class="sub">
+          Not everyone gets a roommate who feels like home.
+          You’re my daily comfort + my daily chaos — and I love it.
+        </p>
+
+        <div class="row">
+          <button id="surpriseBtn" class="btn">Tap for your message 💌</button>
+          <button id="confettiBtn" class="btn ghost">Confetti ✨</button>
+
+          <!-- NEW: Night mode toggle -->
+          <button id="nightBtn" class="btn ghost">Night Sky 🌙</button>
+
+          <!-- NEW: Voice note play/pause -->
+          <button id="voiceBtn" class="btn ghost">Play Voice Note 🎤</button>
+          <audio id="voiceAudio" src="WhatsApp-Ptt-2026-02-13-at-6.57.58-PM.mp3" preload="auto"></audio>
+        </div>
+
+        <div class="mini" id="miniMsg">psst… you’re adored.</div>
+        <div class="mini voiceStatus" id="voiceStatus"></div>
+
+        <div class="note card-mini">
+          <h3>Little roommate love note 🫶</h3>
+          <p>
+            Thank you for all the small things: the “kya hua?” check-ins, the shared snacks,
+            the late-night talks, and the “we’ll figure it out” energy.
+          </p>
+          <p>
+            Living with you made my days softer and funnier. You’re truly my person here. 💗
+          </p>
+          <p class="sign">— from me 🎀</p>
+        </div>
+
+        <div class="chips">
+          <span>#roommateGoals</span><span>#bestie</span><span>#safeSpace</span><span>#forever</span>
+        </div>
+      </div>
+
+      <div class="right">
+        <!-- HERO IMAGE (VERTICAL) -->
+        <div class="portrait">
+          <img src="images/her.png" alt="Her photo" />
+          <div class="badge">my roomie 🫶</div>
+        </div>
+
+        <div class="quote card-mini">
+          <p id="quoteText">“You make this place feel like home.”</p>
+          <span class="spark">✨</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- GALLERY -->
+    <section class="gallery card">
+      <div class="sec-head">
+        <div>
+          <h2>Our memories 📸</h2>
+          <p>Tap a photo to view full.</p>
+        </div>
+        <div class="tiny">4 pics only — clean & cute.</div>
+      </div>
+
+      <div class="grid">
+        <figure class="ph land">
+          <img src="images/m1.png" alt="Memory 1">
+          <figcaption>our comfort zone 💗</figcaption>
+        </figure>
+
+        <figure class="ph port">
+          <img src="images/m2.png" alt="Memory 2">
+          <figcaption>main character duo ✨</figcaption>
+        </figure>
+
+        <figure class="ph land">
+          <img src="images/m3.png" alt="Memory 3">
+          <figcaption>roomie + bestie forever 🫶</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- NEW: QUIZ -->
+    <section class="quiz card">
+      <div class="sec-head">
+        <div>
+          <h2>Roommate Quiz 🧠</h2>
+          <p>Answer honestly… I’m watching 😌</p>
+        </div>
+        <div class="tiny" id="quizProgress">1/4</div>
+      </div>
+
+      <div class="qbox">
+        <p class="q" id="qText">Loading…</p>
+        <div class="options" id="qOptions"></div>
+        <div class="qResult" id="qResult"></div>
+
+        <div class="qActions">
+          <button class="btn ghost" id="nextQ">Next ➜</button>
+          <button class="btn" id="restartQ">Restart 🔁</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- REASONS -->
+    <section class="reasons card">
+      <div class="sec-head">
+        <div>
+          <h2>Reasons I love living with you 💌</h2>
+          <p>Small things, big feelings.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="r-card">
+          <h3>1) You’re my safe place</h3>
+          <p>Even the worst day feels manageable when I can just talk to you.</p>
+        </div>
+        <div class="r-card">
+          <h3>2) You hype me up</h3>
+          <p>When I forget my worth, you remind me — loudly. As you should 😌</p>
+        </div>
+        <div class="r-card">
+          <h3>3) You’re the funniest person here</h3>
+          <p>Our random laughs are basically free therapy.</p>
+        </div>
+        <div class="r-card">
+          <h3>4) You feel like family</h3>
+          <p>Not by blood — by choice. That’s the strongest kind.</p>
+        </div>
+      </div>
+
+      <div class="cta">
+        <button id="bigConfetti" class="btn">Big Confetti + Big Love 💖</button>
+        <div class="mini2">Warning: may cause happiness.</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>Made with 💗 for my roommate</span>
+      <span class="dot">•</span>
+      <span id="todayText"></span>
+    </footer>
+  </main>
+
+  <!-- Confetti canvas -->
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="x" id="closeLb" aria-label="Close">✕</button>
+    <img id="lbImg" alt="Selected photo" />
+    <p id="lbCap"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
